@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% comment %} {% load static %} {% endcomment %}
+{% block title %}Automobiliai {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>Automobiliai</h1>
+{% include 'includes/search.html' %}
+{% if automobiliu_list %}
+{% with automobiliu_list as page_obj %}
+    {% include 'includes/paginator_nav.html' %}
+{% endwith  %}
+<ul>
+    {% for automobil in automobiliu_list %}
+        <li><a href="{% url 'automobiliu_detail' automobil.pk %}">{{ automobil }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% with automobiliu_list as page_obj %}
+    {% include 'includes/paginator_pages.html' %}
+{% endwith %}
+{% else %}
+    <p>Nerasta Automobiliu</p>
+{% endif %}
+{% endblock content %}
+{% comment %} <div class="container automobiliai">
+    <nav aria-label="...">
+        {%if automobiliai.has_other_pages%}
+            <ul class="pagination pagination-sm justify-content-end">
+                {%for i in autombiliai.paginator.page_range%}
+                    {%if automobiliai.number == i%}
+                         {% endcomment %}
+{% comment %} {% endblock content %} {% endcomment %}

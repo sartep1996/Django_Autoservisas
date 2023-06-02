@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ automobiliai_detail }} | {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{{ automobiliai_detail }}</h1>
+<p>{{ aut }}</p>
+{% if autombiliai.all.count > 0 %}
+<h2>{{ automobiliai.automobilio_modelis }}'s books in our library</h2>
+<ul>
+    {% for automobil in automobiliai.all %}
+        <li><a href="{% url 'automobiliai_detail' automobiliai.pk %}">{{ automobiliai.automobilio_modelis }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}

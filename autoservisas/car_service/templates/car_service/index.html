@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Welcome to {{ block.super }}{% endblock title %}
+{% block content %}
+<h1> Automobiliu Servisas </h1>
+<p> Sveiki Atvyke </p>
+<p> Musu automobiliai ir paslaugos </p>
+<ul>
+    <li><strong> Automobiliai:</strong> {{ num_automobiliai }}</li>
+    <li><strong> Automobiliu modeliai:</strong> {{ num_automobiliu_modeliai }}</li>
+    <li><strong> Paslaugu Skaicius:</strong> {{ num_paslaugos }}</li>
+    <li><strong> Uzsakymu skaicius:</strong> {{ num_uzsakymai }}</li>
+</ul>
+{% endblock content %}

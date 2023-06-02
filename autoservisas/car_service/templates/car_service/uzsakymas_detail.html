@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ uzsakymas }} | {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{{ uzsakymas }}</h1>
+<p>{{ uzsakymas.automobilis }}</p>
+{% if uzsakymas.automobilis.all.count > 0 %}
+<h2>{{ uzsakymas.automobilis }}'s books in our library</h2>
+<ul>
+    {% for uzsak in uzsakymas.all %}
+        <li><a href="{% url 'uzsakymas_detail' uzsakymas.pk %}">{{ uzsakymas.automobilis }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}
